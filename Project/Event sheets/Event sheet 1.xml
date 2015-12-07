@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>Voltage is 3  and two resistors with parallel cicruit   so  V= IR and maximum R can be 10 therfore I = 3/10 = 0.3 and minimun 1 therefor I = 3/1 = 3 , Now change the opacity of the glow according to the current passes through the R1 and R2 depending upon the value</comment>
+        <variable constant="0" name="I1" sid="2559170414512482" static="0" type="number">0</variable>
+        <variable constant="0" name="I2" sid="5851056215816784" static="0" type="number">0</variable>
+        <variable constant="0" name="totalCurrent" sid="2965570560421616" static="0" type="number">0</variable>
+        <variable constant="0" name="R1" sid="7038698282956682" static="0" type="number">1</variable>
+        <variable constant="0" name="R2" sid="2428903532305096" static="0" type="number">1</variable>
+        <variable comment="Given" constant="1" name="Voltage" sid="744543826137705" static="0" type="number">3</variable>
+        <variable comment="Bulb glow value is the opacity ( 0 - 100 ) which will vary according to current passed through the bulb" constant="0" name="bulb1GlowValue" sid="6653796722393572" static="0" type="number">100</variable>
+        <variable constant="0" name="bulb2GlowValue" sid="8733195515912677" static="0" type="number">100</variable>
+        <variable comment="Minimum value to slide on left or Start Posn of arrow" constant="1" name="MIN_VARIABLE_X" sid="3984137210792064" static="0" type="number">278</variable>
+        <variable comment="Max value to slide on right" constant="1" name="MAX_VARIABLE_X" sid="5618451445480683" static="0" type="number">415</variable>
+        <variable comment="Is Switch ON or OFF" constant="0" name="isON" sid="9067077066109787" static="0" type="number">0</variable>
+        <event-block sid="133642664030146">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1993466346163268" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="6012165858816343" type="Functions">
+                    <param id="0" name="Name">&quot;Reset&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>//Toggle the variableto set keys ON or OFF</comment>
+        <event-block sid="8181807096931552">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="2886279211155392" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">key</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="8154145857354272" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="7651254273114317" type="BtnClick">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;s&quot;</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="3560170543534374" type="Functions">
+                    <param id="0" name="Name">&quot;onSwitchEnable&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If toggle is &gt; 1 then set isON to 0</comment>
+        <event-block sid="7886137602547849">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9138804712570072" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7114918296074013" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5513504331785049">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="379754100616269" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="6626240622264914" type="Functions">
+                    <param id="0" name="Name">&quot;Reset&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2280059303075921">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2693768353044658" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1571154007640033" type="Functions">
+                    <param id="0" name="Name">&quot;onSwitchEnable&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2386959808564108">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="5036648076318911" type="Mouse">
+                            <param id="0" name="Object">arrow</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4053575491846">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="6126603912522654" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="1782588977250854" type="arrow">
+                                    <param id="0" name="X">Mouse.X</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6812849261862904" type="Functions">
+                                    <param id="0" name="Name">&quot;onArrowMoved&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8212614496733535">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="8796138062220378" type="Mouse">
+                    <param id="0" name="Object">arrow2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2255352825140475">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="183916309635027" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="9948926650000505" type="arrow2">
+                            <param id="0" name="X">Mouse.X</param>
+                        </action>
+                        <action id="0" name="Call function" sid="3020542193645454" type="Functions">
+                            <param id="0" name="Name">&quot;onArrowMoved&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8214813802371254">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="56419732342662" type="System">
+                    <param id="0" name="Variable">bulb1GlowValue</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4081486627989086" type="System">
+                    <param id="0" name="Variable">bulb1GlowValue</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7490348808121711">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7550633518806268" type="System">
+                    <param id="0" name="Variable">bulb1GlowValue</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1786596994838381" type="System">
+                    <param id="0" name="Variable">bulb1GlowValue</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7263304218430137">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2875704598217617" type="System">
+                    <param id="0" name="Variable">bulb2GlowValue</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4130394389604828" type="System">
+                    <param id="0" name="Variable">bulb2GlowValue</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5282636597888355">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4442769127163836" type="System">
+                    <param id="0" name="Variable">bulb2GlowValue</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2982230844372783" type="System">
+                    <param id="0" name="Variable">bulb2GlowValue</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="525450476139956">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="4776508215757334" type="arrow">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">MAX_VARIABLE_X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="7305572794943414" type="arrow">
+                    <param id="0" name="X">MAX_VARIABLE_X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="372219715212843">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="6704268348144475" type="arrow">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">MIN_VARIABLE_X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2848676819467993" type="arrow">
+                    <param id="0" name="X">MIN_VARIABLE_X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="902045408164324">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="2378250864623725" type="arrow2">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">MAX_VARIABLE_X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="5761472349638247" type="arrow2">
+                    <param id="0" name="X">MAX_VARIABLE_X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5977024595501703">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="794708881505589" type="arrow2">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">MIN_VARIABLE_X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2855871390664757" type="arrow2">
+                    <param id="0" name="X">MIN_VARIABLE_X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="476140827087027">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="5779598831486824" type="lamp_sh1" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="9005019163902656" type="lamp_sh1">
+                    <param id="0" name="Opacity">bulb1GlowValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="680084931170505">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="7286513793444139" type="lamp_sh2" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="2286206203759985" type="lamp_sh2">
+                    <param id="0" name="Opacity">bulb2GlowValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="4812678544943874">
+            <conditions>
+                <condition id="0" name="On function" sid="6551319008656191" type="Functions">
+                    <param id="0" name="Name">&quot;Reset&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6685934772272932" type="key">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="3309712791762735" type="System">
+                    <param id="0" name="Variable">isON</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="995424149611744" type="key2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8052997774293646" type="lamp1_off">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2505039956586589" type="lamp1_on">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9538172254026061" type="lamp2_off">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7326481812787398" type="lamp2_on">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2736692207311559" type="arrow">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7350023308582373" type="arrow2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="39538311991608" type="arrow">
+                    <param id="0" name="X">MIN_VARIABLE_X</param>
+                </action>
+                <action id="-1" name="Set X" sid="3275723867046349" type="arrow2">
+                    <param id="0" name="X">MIN_VARIABLE_X</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4824386513947848" type="lamp_sh1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6324620801758799" type="lamp_sh2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="9934106893073614" type="lamp_sh1">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="2547728509692268" type="lamp_sh2">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="3069054411166869" type="System">
+                    <param id="0" name="Variable">bulb1GlowValue</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="1527813747045784" type="System">
+                    <param id="0" name="Variable">bulb2GlowValue</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="8678017486915516" type="System">
+                    <param id="0" name="Variable">R1</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5654752260892543" type="System">
+                    <param id="0" name="Variable">R2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="8913758482709768" type="System">
+                    <param id="0" name="Variable">R2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1286415945665227">
+            <conditions>
+                <condition id="0" name="On function" sid="9894437241178926" type="Functions">
+                    <param id="0" name="Name">&quot;onSwitchEnable&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6854172809776587" type="key2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7555097311366434" type="key">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9443523599383435" type="lamp1_off">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2202744311727304" type="lamp1_on">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2662245425194654" type="lamp2_off">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4827358377213847" type="lamp2_on">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6444054733111215" type="arrow">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9665508789497167" type="arrow2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7872961548500035" type="lamp_sh1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5540544940091378" type="lamp_sh2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="8361797489677279" type="lamp_sh1">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="5231655953570451" type="lamp_sh2">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Convert Arrow Co-ordinates to Ohms between 1 - 10 NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin&#x0D;&#x0A;ArrowX will be converted in to the range of 1 - 10 ohms </comment>
+        <event-block sid="1362202123683254">
+            <conditions>
+                <condition id="0" name="On function" sid="2352613003804039" type="Functions">
+                    <param id="0" name="Name">&quot;onArrowMoved&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3173648549096777" type="System">
+                    <param id="0" name="Variable">R1</param>
+                    <param id="1" name="Value">(((ceil(arrow.X) - MIN_VARIABLE_X) * 9) / ( MAX_VARIABLE_X - MIN_VARIABLE_X)) + 1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6203689833534548" type="System">
+                    <param id="0" name="Variable">R2</param>
+                    <param id="1" name="Value">(((ceil(arrow2.X) - MIN_VARIABLE_X) * 9) / ( MAX_VARIABLE_X - MIN_VARIABLE_X)) + 1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6355475510274896">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8865156102700124" type="System">
+                            <param id="0" name="Variable">R1</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2516066431135113" type="System">
+                            <param id="0" name="Variable">R1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1141777777222943">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1445413615376413" type="System">
+                            <param id="0" name="Variable">R1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4664657082543851" type="System">
+                            <param id="0" name="Variable">R1</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2282590529450183">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4981805609680504" type="System">
+                            <param id="0" name="Variable">R2</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6611316359481479" type="System">
+                            <param id="0" name="Variable">R2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9462726959448885">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7354225417335938" type="System">
+                            <param id="0" name="Variable">R2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2097180610296132" type="System">
+                            <param id="0" name="Variable">R2</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4334249693714712">
+                    <conditions>
+                        <condition id="-21" name="Is between values" sid="2458839171490565" type="System">
+                            <param id="0" name="Value">R1</param>
+                            <param id="1" name="Lower bound">1</param>
+                            <param id="2" name="Upper bound">10</param>
+                        </condition>
+                        <condition id="-21" name="Is between values" sid="4687173149557653" type="System">
+                            <param id="0" name="Value">R2</param>
+                            <param id="1" name="Lower bound">1</param>
+                            <param id="2" name="Upper bound">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4698144979559692" type="System">
+                            <param id="0" name="Variable">I1</param>
+                            <param id="1" name="Value">3 / R1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5799638062011716" type="System">
+                            <param id="0" name="Variable">I2</param>
+                            <param id="1" name="Value">3 / R2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6371719001281635" type="System">
+                            <param id="0" name="Variable">totalCurrent</param>
+                            <param id="1" name="Value">(3 * (R1 + R2 )) / (R1 * R2)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="343116169438953" type="System">
+                            <param id="0" name="Variable">bulb1GlowValue</param>
+                            <param id="1" name="Value">totalCurrent - I2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2438798702347479" type="System">
+                            <param id="0" name="Variable">bulb2GlowValue</param>
+                            <param id="1" name="Value">totalCurrent - I1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="479429339158156" type="System">
+                            <param id="0" name="Variable">bulb1GlowValue</param>
+                            <param id="1" name="Value">(((bulb1GlowValue - 0) * 100 ) / 3 ) - I2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6374049210949537" type="System">
+                            <param id="0" name="Variable">bulb2GlowValue</param>
+                            <param id="1" name="Value">(((bulb2GlowValue - 0) * 100 ) / 3 ) - I1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

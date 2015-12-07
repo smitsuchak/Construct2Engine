@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>LasmaProject</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>36ekqt0t62ttp</unique-id>
+    <saved-with-version>21202</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1024</width>
+        <height>768</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Internet Explorer</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="b" sid="1590098445232193">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2258515088444787" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\b2.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="key" sid="1989887553534056">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1943562576625941" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\key1.png">
+                        <collision-poly>
+                            <point x="0.0208333" y="0.0357143" />
+                            <point x="0.979167" y="0.0357143" />
+                            <point x="0.979167" y="0.964286" />
+                            <point x="0.0208333" y="0.964286" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="key2" sid="5251234763809931">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8769526546244494" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\key2.png">
+                        <collision-poly>
+                            <point x="0.0208333" y="0.0357143" />
+                            <point x="0.979167" y="0.0357143" />
+                            <point x="0.979167" y="0.964286" />
+                            <point x="0.0208333" y="0.964286" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="355711131040261">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="lamp1_off" sid="3992418732986976">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1885183710684253" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\lamp_off.png">
+                        <collision-poly>
+                            <point x="0.14433" y="0.142857" />
+                            <point x="0.494845" y="0" />
+                            <point x="0.85567" y="0.142857" />
+                            <point x="1" y="0.5" />
+                            <point x="0.845361" y="0.846939" />
+                            <point x="0.494845" y="0.989796" />
+                            <point x="0.154639" y="0.846939" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lamp1_on" sid="2670396121215061">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9145522774010562" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\lamp.png">
+                        <collision-poly>
+                            <point x="0.14433" y="0.142857" />
+                            <point x="0.494845" y="0" />
+                            <point x="0.85567" y="0.142857" />
+                            <point x="1" y="0.5" />
+                            <point x="0.845361" y="0.846939" />
+                            <point x="0.494845" y="0.989796" />
+                            <point x="0.154639" y="0.846939" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lamp2_on" sid="497235224520123">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5439622821910392" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\lamp.png">
+                        <collision-poly>
+                            <point x="0.14433" y="0.142857" />
+                            <point x="0.494845" y="0" />
+                            <point x="0.85567" y="0.142857" />
+                            <point x="1" y="0.5" />
+                            <point x="0.845361" y="0.846939" />
+                            <point x="0.494845" y="0.989796" />
+                            <point x="0.154639" y="0.846939" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lamp2_off" sid="9248920514671666">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8056206494452287" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.5" original-source="C:\Users\JMGD\Downloads\task\lamp_off.png">
+                        <collision-poly>
+                            <point x="0.14433" y="0.142857" />
+                            <point x="0.494845" y="0" />
+                            <point x="0.85567" y="0.142857" />
+                            <point x="1" y="0.5" />
+                            <point x="0.845361" y="0.846939" />
+                            <point x="0.494845" y="0.989796" />
+                            <point x="0.154639" y="0.846939" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow" sid="2522585653477691">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="startPosX of slider" name="minVariableX" sid="7458447263004065" type="number" />
+                <instance-variable comment="Max Value of Slider X " name="maxVariableX" sid="9603743569350526" type="number" />
+                <instance-variable comment="check if user touch and isMoving Stage" name="isMoving" sid="9128513825620432" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1788268143689171" speed="5">
+                    <frame duration="1" hotspotX="0.516129" hotspotY="0.515152" original-source="C:\Users\JMGD\Downloads\task\arrow.png">
+                        <collision-poly>
+                            <point x="0.16129" y="0.151515" />
+                            <point x="0.483871" y="0.0606061" />
+                            <point x="0.870968" y="0.121212" />
+                            <point x="1" y="0.484848" />
+                            <point x="0.870968" y="0.878788" />
+                            <point x="0.483871" y="0.969697" />
+                            <point x="0.129032" y="0.878788" />
+                            <point x="0" y="0.484848" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow2" sid="5103124966436042">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="startPosX of slider" name="minVariableX" sid="8453511621048301" type="number" />
+                <instance-variable comment="Max Value of Slider X " name="maxVariableX" sid="5267138416745526" type="number" />
+                <instance-variable comment="check if user touch and isMoving Stage" name="isMoving" sid="6410601449107713" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="62218244213974" speed="5">
+                    <frame duration="1" hotspotX="0.516129" hotspotY="0.515152" original-source="C:\Users\JMGD\Downloads\task\arrow.png">
+                        <collision-poly>
+                            <point x="0.16129" y="0.151515" />
+                            <point x="0.483871" y="0.0606061" />
+                            <point x="0.870968" y="0.121212" />
+                            <point x="1" y="0.484848" />
+                            <point x="0.870968" y="0.878788" />
+                            <point x="0.483871" y="0.969697" />
+                            <point x="0.129032" y="0.878788" />
+                            <point x="0" y="0.484848" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Functions" sid="2943247790027719">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="lamp_sh1" sid="7385478609082837">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8505464532626231" speed="5">
+                    <frame duration="1" hotspotX="0.501832" hotspotY="0.501832" original-source="C:\Users\JMGD\Downloads\task\lamp_sh.png">
+                        <collision-poly>
+                            <point x="0.296703" y="0.296703" />
+                            <point x="0.498168" y="0.216117" />
+                            <point x="0.70696" y="0.29304" />
+                            <point x="0.787546" y="0.498168" />
+                            <point x="0.70696" y="0.70696" />
+                            <point x="0.498168" y="0.783883" />
+                            <point x="0.296703" y="0.703297" />
+                            <point x="0.216117" y="0.498168" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lamp_sh2" sid="8005377859894617">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4833032309225202" speed="5">
+                    <frame duration="1" hotspotX="0.501832" hotspotY="0.501832" original-source="C:\Users\JMGD\Downloads\task\lamp_sh.png">
+                        <collision-poly>
+                            <point x="0.296703" y="0.296703" />
+                            <point x="0.498168" y="0.216117" />
+                            <point x="0.70696" y="0.29304" />
+                            <point x="0.787546" y="0.498168" />
+                            <point x="0.70696" y="0.70696" />
+                            <point x="0.498168" y="0.783883" />
+                            <point x="0.296703" y="0.703297" />
+                            <point x="0.216117" y="0.498168" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BtnClick" sid="5483193095585802">
+            <plugin id="Audio" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="3" />
+        <global-instance type="Functions" uid="10" />
+        <global-instance type="BtnClick" uid="13">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="s.m4a" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
